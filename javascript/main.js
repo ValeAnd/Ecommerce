@@ -158,7 +158,7 @@ function init() {
                 alert("Opción no válida");
                 break;
         }
-    } while(opcion !== 0);
+    } while(opcion !== 4);
 
     alert("Gracias por visitar el CyberNow de Tech");
 }
