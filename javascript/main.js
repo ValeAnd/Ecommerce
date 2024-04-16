@@ -4,7 +4,7 @@ let confirmacion;
 let cantidad;
 
 function mostrarMenuPrincipal() {
-    return parseInt(prompt(("----------------TECH---------------- \n\n " + "Categorias:\n\n" +"1. Celulares\n 2. Audifonos\n 3. Televisores \n\n 5.Salir" + "\nIngrese una Opción:")));
+    return parseInt(prompt(("----------------TECH---------------- \n\n " + "Categorias:\n\n" +"1. Celulares\n 2. Audifonos\n 3. Televisores \n\n 4.Salir" + "\nIngrese una Opción:")));
 }
 
 function mostrarCelulares() {
