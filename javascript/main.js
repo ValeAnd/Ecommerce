@@ -152,7 +152,6 @@ function init() {
                 mostrarTelevisores();
                 break;
             case 4:
-                alert("Gracias por visitar Tech!!");
                 break;
             default:
                 alert("Opción no válida");
