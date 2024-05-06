@@ -78,26 +78,24 @@ function iniciarSesion() {
 let opcion;
 let sesionIniciada = false;
 
-do{
-    alert("---------BIENVENIDO A TECH--------- \n\n" + "Pasos para compar : \n\n 1.Para comprar debe de Iniciar Sesión, caso contrario debe Registrarse \n\n 2. Al ingresar podra seleccionar la categoria de productos que desea comprar \n\n3. Despues podra ver los productos que son de esa categoria y podra seleccionar el que desea y la cantidad que quiera \n\n 4. Luego le saldra la bolsa de compra y una ventana para confirmar la compra \n\n 5. Finalmente se ejecutra y saldra su orden" ); 
-    let respuesta =confirm("¿Tiene una cuenta?");
 
-    if(respuesta){
-        if(!sesionIniciada){
-            sesionIniciada= iniciarSesion();
+alert("---------BIENVENIDO A TECH--------- \n\n" + "Pasos para compar : \n\n 1.Para comprar debe de Iniciar Sesión, caso contrario debe Registrarse \n\n 2. Al ingresar podra seleccionar la categoria de productos que desea comprar \n\n3. Despues podra ver los productos que son de esa categoria y podra seleccionar el que desea y la cantidad que quiera \n\n 4. Luego le saldra la bolsa de compra y una ventana para confirmar la compra \n\n 5. Finalmente se ejecutra y saldra su orden" ); 
 
-        }else{
-            alert("Debe de iniciar sesión");
-        }
+if(respuesta){
+    if(!sesionIniciada){
+        sesionIniciada= iniciarSesion();
+
     }else{
-        let confirmacion= confirm("¿Deseas registrarte?");
-        if(confirmacion){
-            registrarUsuario();
-        }else{
-            alert("No puede comprar sin haber iniciado sesion");
-        }
-    }  
-}while (opcion ===0);
+        alert("Debe de iniciar sesión");
+    }
+}else{
+    let confirmacion= confirm("¿Deseas registrarte?");
+    if(confirmacion){
+        registrarUsuario();
+    }else{
+        alert("No puede comprar sin haber iniciado sesion");
+    }
+}     
 
 function mostrarCatalogo() {
     let mensajeMostrar = "Catálogo de productos:\n";
