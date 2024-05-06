@@ -80,7 +80,8 @@ let sesionIniciada = false;
 let compraRealizada = false;
 
 do{
-    alert("---------BIENVENIDO A TECH--------- \n\n" + "Pasos para compar : \n\n 1.Para comprar debe de Iniciar Sesión, caso contrario debe Registrarse \n\n 2. Al ingresar podra seleccionar la categoria de productos que desea comprar \n\n3. Despues podra ver los productos que son de esa categoria y podra seleccionar el que desea y la cantidad que quiera \n\n 4. Luego le saldra la bolsa de compra y una ventana para confirmar la compra \n\n 5. Finalmente se ejecutra y saldra su orden" ); 
+    alert("--------- BIENVENIDO A TECH --------- ")
+    alert("Pasos para compar : \n\n 1.Para comprar debe de Iniciar Sesión, caso contrario debe Registrarse \n\n 2. Al ingresar podra seleccionar la categoria de productos que desea comprar \n\n3. Despues podra ver los productos que son de esa categoria y podra seleccionar el que desea y la cantidad que quiera \n\n 4. Luego le saldra la bolsa de compra y una ventana para confirmar la compra \n\n 5. Finalmente se ejecutra y saldra su orden" ); 
     let respuesta =confirm("¿Tiene una cuenta?");
 
     if(respuesta){
