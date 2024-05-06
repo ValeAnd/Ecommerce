@@ -1,165 +1,193 @@
-let descuento;
-let precio;
-let confirmacion;
-let cantidad;
+
+class Usuario{
+    constructor(id, usuario, contraseña){
+        this.id=id;
+        this.usuario = usuario;
+        this.contraseña = contraseña;
+    }
+}
+
+class Producto {
+    constructor(id, nombre, descripcion, precio, stock) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.stock = stock;
+    }
+}
+const catalogo = {
+    celulares: [
+        new Producto(1, "Samsung Galaxy A14", "Pantalla HD+ de 6.4 pulgadas, cámara principal de 48 MP, batería de 5000 mAh.", 500, 5),
+        new Producto(2, "Motorola G14", "Procesador Snapdragon 690, cámara principal de 48 MP, pantalla de 6.7 pulgadas.", 450, 3),
+    ],
+    televisores: [
+        new Producto(3, "Samsung Smart TV", "Resolución 4K UHD, pantalla de 55 pulgadas, sistema operativo Tizen.", 1559, 10),
+        new Producto(4, "LG THINQ", "Resolución 4K UHD, pantalla de 65 pulgadas, sistema operativo webOS.", 1700, 8),
+    ],
+    tablets: [
+        new Producto(5, "iPad Air", "Pantalla Liquid Retina de 10.9 pulgadas, chip A14 Bionic, Touch ID integrado.", 599, 15),
+        new Producto(6, "Samsung Galaxy Tab S7", "Pantalla Super AMOLED de 11 pulgadas, procesador Snapdragon 865+, S Pen incluido.", 649, 12),
+    ]
+};
+
+const usuarioRegistrado = [
+    {
+        id: 1,
+        usuario: "Vale",
+        contraseña:"1234",
+    },
+];
+
+let carrito = [];
 
 function mostrarMenuPrincipal() {
-    return parseInt(prompt(("----------------TECH---------------- \n\n " + "Categorias:\n\n" +"1. Celulares\n 2. Audifonos\n 3. Televisores \n\n 4.Salir" + "\nIngrese una Opción:")));
+    return parseInt(prompt(("----------------TECH---------------- \n\n " + "Opciones:\n\n" +" 1. Ver catálogo de productos\n 2. Agregar producto al carrito\n 3. Ver carrito de compras \n 4. Realizar Compra \n\n 5.Salir" + "\nIngrese una Opción:")));
 }
 
-function mostrarCelulares() {
-    let opcionCelular;
-
-    do {
-        opcionCelular = parseInt(prompt(("----------Celulares---------- \n"+"\n1.Samsung Galaxy A14 : S/500.00 \n" + "2.Motorola G14 : S/450.00\n" + "3.Xiaomi : S/700.00 \n\n4.Salir")));
-        
-        switch(opcionCelular) {
-            case 1:
-                precio= 500;
-                break;
-            case 2:
-                precio= 450;
-                break;
-            case 3:
-                precio= 700;
-                break;
-            case 4:
-                return;
-            default :
-                alert("Error. Opción incorrecta, vuelva a ingresar una opción");
-                continue;
-        }
-        cantidad = parseInt(prompt("Ingrese la cantidad que desea 1-10: "));
-        
-        while(cantidad > 10 || cantidad < 1) {
-            cantidad = parseInt(prompt("Ingrese una cantidad válida (entre 1 y 10): "));
-        }
-
-        descuento = 0.2 * precio;
-        total = (precio - descuento) * cantidad;
-        alert("----Bolsa de compras---- \n\n" + "Cantidad= " + cantidad+ "\nPrecio Unidad= S/" + precio + "\nDescuento Unidad=S/" + descuento);
-        confirmacion = confirm("¿Está seguro de realizar la compra?");
-        if (confirmacion) {
-            alert("----Orden de compra---- \n\n" + "Cantidad= " + cantidad + "\nPrecio= S/" + precio*cantidad + "\nDescuento= S/" + descuento*cantidad + "\n-----------------------------\n" + "Total a pagar= S/" + total);
-        } else {
-            alert("Regresamos al menu principal");
-        }
-    } while(opcionCelular !== 4);
-
-    alert("Gracias por comprar en Tech!!");
+function registrarUsuario (){
+    let usuario = prompt("Ingrese el nombre de usuario:");
+    let contraseña = prompt("Ingrese una contraseña");
+    if(usuario === "" || contraseña=== ""){
+        alert("Ingrese datos validos");
+    }else{
+        const nuevoUsuario = new Usuario(usuarioRegistrado.length + 1, usuario, contraseña);
+        usuarioRegistrado.push(nuevoUsuario);
+        alert("Usuario registrado exitosamente");
+        iniciarSesion();
+    }
+    
 }
 
-function mostrarAudifonos() {
-    let opcionAudifonos;
+function iniciarSesion() {
+    let usuarioValido;
+    do{
+        const usuario = prompt("Ingrese su nombre de usuario:");
+        const contraseña = prompt("Ingrese su contraseña:");
+        usuarioValido = usuarioRegistrado.find(el => el.usuario === usuario && el.contraseña === contraseña);
 
-    do {
-        opcionAudifonos = parseInt(prompt(("----------Audifonos---------- \n"+"\n1.JBL Wave Flex : S/189.00 \n" + "2.SONY True Wireless: S/849.00\n" + "3.HUAWEI FreeBuds : S/92.00 \n\n4.Salir")));
-        
-        switch(opcionAudifonos) {
-            case 1:
-                precio= 189;
-                break;
-            case 2:
-                precio= 849;
-                break;
-            case 3:
-                precio= 92;
-                break;
-            case 4:
-                return;
-            default :
-                alert("Error. Opción incorrecta, vuelva a ingresar una opción");
-                continue;
-        }
-        cantidad = parseInt(prompt("Ingrese la cantidad que desea 1-10: "));
-        
-        while(cantidad > 10 || cantidad < 1) {
-            cantidad = parseInt(prompt("Ingrese una cantidad válida (entre 1 y 10): "));
-        }
-
-        descuento = 0.2 * precio;
-        total = (precio - descuento) * cantidad;
-        alert("----Bolsa de compras---- \n\n" + "Cantidad= " + cantidad+ "\nPrecio Unidad= S/" + precio + "\nDescuento Unidad=S/" + descuento);
-        confirmacion = confirm("¿Está seguro de realizar la compra?");
-        if (confirmacion) {
-            alert("----Orden de compra---- \n\n" + "Cantidad= " + cantidad + "\nPrecio= S/" + precio*cantidad + "\nDescuento= S/" + descuento*cantidad + "\n-----------------------------\n" + "Total a pagar= S/" + total);
+        if (usuarioValido) {
+            alert("Bienvenido a Tech " + usuario);
+            init();
         } else {
-            alert("Regresamos al menu principal");
+            alert("Credenciales incorrectas");
         }
-    } while(opcionAudifonos !== 4);
-
-    alert("Gracias por comprar en Tech!!");
+    }while(!usuarioValido);
 }
 
-function mostrarTelevisores() {
-    let opcionTelevisores;
+let opcion;
+let sesionIniciada = false;
 
+do{
+    alert("---------BIENVENIDO A TECH--------- \n\n" + "Pasos para compar : \n\n 1.Para comprar debe de Iniciar Sesión, caso contrario debe Registrarse \n\n 2. Al ingresar podra seleccionar la categoria de productos que desea comprar \n\n3. Despues podra ver los productos que son de esa categoria y podra seleccionar el que desea y la cantidad que quiera \n\n 4. Luego le saldra la bolsa de compra y una ventana para confirmar la compra \n\n 5. Finalmente se ejecutra y saldra su orden" ); 
+    let respuesta =confirm("¿Tiene una cuenta?");
+
+    if(respuesta){
+        if(!sesionIniciada){
+            sesionIniciada= iniciarSesion();
+
+        }else{
+            alert("Debe de iniciar sesión");
+        }
+    }else{
+        let confirmacion= confirm("¿Deseas registrarte?");
+        if(confirmacion){
+            registrarUsuario();
+        }else{
+            alert("No puede comprar sin haber iniciado sesion");
+        }
+    }  
+}while (opcion ===0);
+
+function mostrarCatalogo() {
+    let mensajeMostrar = "Catálogo de productos:\n";
+    for (const categoria in catalogo) {
+        mensajeMostrar += "\n----------------------------------\n"+ categoria.toUpperCase() + ":\n";
+        catalogo[categoria].forEach(el => {
+            mensajeMostrar += el.id + "." + el.nombre + " - Precio: S/" + el.precio + "\nStock: " + el.stock +"\n";  
+        });
+    }
+    alert(mensajeMostrar);
+}
+
+function agregarAlCarrito() {
+    let productoEncontrado = false;
     do {
-        opcionTelevisores = parseInt(prompt(("----------Televisores---------- \n"+"\n1.Samsung Smart Tv : S/1559.00 \n" + "2.LG THINQ: S/1700.00\n" + "3.HISENSE UHD : S/900.00 \n\n4.Salir")));
-        
-        switch(opcionTelevisores) {
-            case 1:
-                precio= 1559;
-                break;
-            case 2:
-                precio= 1700;
-                break;
-            case 3:
-                precio= 900;
-                break;
-            case 4:
-                return;
-            default :
-                alert("Error. Opción incorrecta, vuelva a ingresar una opción");
-                continue;
+        const idProducto = parseInt(prompt("Ingrese el ID del producto que desea agregar al carrito:"));
+        for (const categoria in catalogo) {
+            const producto = catalogo[categoria].find(el => el.id === idProducto);
+            if (producto) {
+                if (producto.stock > 0) {
+                    let mensajeConfirmacion = confirm("¿Estas seguro que desea agregar al carrito?")
+                    if(mensajeConfirmacion){
+                        carrito.push(producto);
+                        producto.stock--;
+                        productoEncontrado = true;
+                        alert("Se agregó correctamente " + producto.nombre + " al carrito");
+                    }
+                    else{
+                        return init();
+                    }
+                } else {
+                    alert("El producto seleccionado no está disponible en stock.");
+                }
+            }
         }
-        cantidad = parseInt(prompt("Ingrese la cantidad que desea 1-10: "));
-        
-        while(cantidad > 10 || cantidad < 1) {
-            cantidad = parseInt(prompt("Ingrese una cantidad válida (entre 1 y 10): "));
+        if (!productoEncontrado) {
+            alert("ID de producto inválido. Por favor, seleccione un producto válido.");
         }
+    } while (!productoEncontrado);
+}
 
-        descuento = 0.2 * precio;
-        total = (precio - descuento) * cantidad;
-        alert("----Bolsa de compras---- \n\n" + "Cantidad= " + cantidad+ "\nPrecio Unidad= S/" + precio + "\nDescuento Unidad=S/" + descuento);
-        confirmacion = confirm("¿Está seguro de realizar la compra?");
-        if (confirmacion) {
-            alert("----Orden de compra---- \n\n" + "Cantidad= " + cantidad + "\nPrecio= S/" + precio*cantidad + "\nDescuento= S/" + descuento*cantidad + "\n-----------------------------\n" + "Total a pagar= S/" + total);
-        } else {
-            alert("Regresamos al menu principal");
-        }
-    } while(opcionTelevisores !== 4);
+function mostrarCarrito() {
+    if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+    } else {
+        let mensaje = "Carrito de compras:\n\n";
+        carrito.forEach(el => {
+            mensaje += el.nombre + " - Precio:" + el.precio+  "\n";
+        });
+        alert(mensaje);
+    }
+}
 
-    alert("Gracias por comprar en Tech!!");
+function realizarCompra(){
+    let total =0 ;
+    if(carrito.length === 0){
+        alert("El carrito esta vacio");
+    }else{
+        carrito.forEach(el => {
+            total = total + el.precio;
+        });
+        
+        alert("El total de la compra es: S/" + total);
+    }
 }
 
 function init() {
-    alert("Bienvenidos al CyberNow de Tech");
-
     let opcion;
-
     do {
         opcion = mostrarMenuPrincipal();
 
         switch(opcion) {
             case 1:
-                mostrarCelulares();
+                mostrarCatalogo();
                 break;
             case 2:
-                mostrarAudifonos();
+                agregarAlCarrito();
                 break;
             case 3:
-                mostrarTelevisores();
+                mostrarCarrito();
                 break;
             case 4:
+                realizarCompra();
+                break;
+            case 5:
+                alert("¡Gracias por visitar TECH!");
                 break;
             default:
                 alert("Opción no válida");
                 break;
         }
-    } while(opcion !== 4);
-
-    alert("Gracias por visitar el CyberNow de Tech");
+    } while(opcion !== 5);  
 }
-
-init();
