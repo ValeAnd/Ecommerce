@@ -77,25 +77,28 @@ function iniciarSesion() {
 
 let opcion;
 let sesionIniciada = false;
+let compraRealizada = false;
 
+do{
+    alert("---------BIENVENIDO A TECH--------- \n\n" + "Pasos para compar : \n\n 1.Para comprar debe de Iniciar Sesión, caso contrario debe Registrarse \n\n 2. Al ingresar podra seleccionar la categoria de productos que desea comprar \n\n3. Despues podra ver los productos que son de esa categoria y podra seleccionar el que desea y la cantidad que quiera \n\n 4. Luego le saldra la bolsa de compra y una ventana para confirmar la compra \n\n 5. Finalmente se ejecutra y saldra su orden" ); 
+    let respuesta =confirm("¿Tiene una cuenta?");
 
-alert("---------BIENVENIDO A TECH--------- \n\n" + "Pasos para compar : \n\n 1.Para comprar debe de Iniciar Sesión, caso contrario debe Registrarse \n\n 2. Al ingresar podra seleccionar la categoria de productos que desea comprar \n\n3. Despues podra ver los productos que son de esa categoria y podra seleccionar el que desea y la cantidad que quiera \n\n 4. Luego le saldra la bolsa de compra y una ventana para confirmar la compra \n\n 5. Finalmente se ejecutra y saldra su orden" ); 
+    if(respuesta){
+        if(!sesionIniciada){
+            sesionIniciada= iniciarSesion();
 
-if(respuesta){
-    if(!sesionIniciada){
-        sesionIniciada= iniciarSesion();
-
+        }else{
+            alert("Debe de iniciar sesión");
+        }
     }else{
-        alert("Debe de iniciar sesión");
-    }
-}else{
-    let confirmacion= confirm("¿Deseas registrarte?");
-    if(confirmacion){
-        registrarUsuario();
-    }else{
-        alert("No puede comprar sin haber iniciado sesion");
-    }
-}     
+        let confirmacion= confirm("¿Deseas registrarte?");
+        if(confirmacion){
+            registrarUsuario();
+        }else{
+            alert("No puede comprar sin haber iniciado sesion");
+        }
+    }  
+}while (!confirmacion);
 
 function mostrarCatalogo() {
     let mensajeMostrar = "Catálogo de productos:\n";
@@ -116,16 +119,10 @@ function agregarAlCarrito() {
             const producto = catalogo[categoria].find(el => el.id === idProducto);
             if (producto) {
                 if (producto.stock > 0) {
-                    let mensajeConfirmacion = confirm("¿Estas seguro que desea agregar al carrito?")
-                    if(mensajeConfirmacion){
-                        carrito.push(producto);
-                        producto.stock--;
-                        productoEncontrado = true;
-                        alert("Se agregó correctamente " + producto.nombre + " al carrito");
-                    }
-                    else{
-                        return init();
-                    }
+                    carrito.push(producto);
+                    producto.stock--;
+                    productoEncontrado = true;
+                    alert("Se agregó correctamente " + producto.nombre + " al carrito");
                 } else {
                     alert("El producto seleccionado no está disponible en stock.");
                 }
@@ -157,8 +154,14 @@ function realizarCompra(){
         carrito.forEach(el => {
             total = total + el.precio;
         });
-        
+        mostrarCarrito();
         alert("El total de la compra es: S/" + total);
+        let confirmacion = confirm("¿Desea realizar la compra?");
+
+        if(confirmacion){
+            alert("Gracias por comprar en TECH!")
+            compraRealizada=true;
+        }
     }
 }
 
@@ -187,5 +190,5 @@ function init() {
                 alert("Opción no válida");
                 break;
         }
-    } while(opcion !== 5);  
+    } while(opcion !== 5 && !compraRealizada);  
 }
