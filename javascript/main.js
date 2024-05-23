@@ -30,7 +30,7 @@ function mostrarProductos(productos){
 
         container.appendChild(card);
 
-        buttonAgregar.addEventListener("click", () => agregarCarrito(el)); // Mover el event listener aquí
+        buttonAgregar.addEventListener("click", () => agregarCarrito(el)); 
 
     });
 }
