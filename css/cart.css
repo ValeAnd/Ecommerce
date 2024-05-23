@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+header{
+    background-color: white;
+    position: fixed;
+    z-index: 99999;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__list .nav__item {
+    list-style: none;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: hsl(219, 9%, 45%);
+    font-weight: 500;
+}
+
+.nav__item--left{
+    margin: 0 300px 0 150px;
+    font-size: 25px;
+    font-weight: 600;
+    color: #4D68B6;
+}
+
+.nav__item--right{
+    margin-left: 300px;
+}
+
+.nav__item-image{
+    width: 50px;
+}
+
+.nav__item a{
+    text-decoration: none;
+    color:hsl(219, 9%, 45%);
+}
+
+main{
+    padding-top:8rem;
+}
+
+.title__bolsa{
+    margin: 40px 0;
+    margin-left: 250px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #4D68B6;
+}
+
+#container{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 60px;
+}
+
+.card__texts{
+    width: 200px;
+}
+
+.title{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.price{
+    color: #6C6C6C;
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+.imagen {
+    width: 150px;
+}
+
+.card__contador .contador__button{
+    border: unset;
+    background-color: #4D68B6;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.card__contador .contador__button:hover {
+    cursor: pointer;
+}
+
+.card__contador .contador__cantidad{
+    margin: 0 10px;
+}
+
+.container__finalizar{
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+.container__totales{
+    margin-bottom: 50px;
+    font-size: 17px;
+    font-weight: 500;
+}
+.container__totales p{
+    margin: 15px 0;
+}
+
+.button__finalizar{
+    border: unset;
+    border-radius: 20px;
+    background-color: #F4DE56;
+    padding: 20px 80px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+
+.button__finalizar:hover{
+    background-color: #f0da4a;
+    cursor: pointer;
+    box-shadow: 0px 0px 7px 1px #cacaca;
+}
+
+footer{
+    margin-top: 5rem ;
+    background-color: #4D68B6;
+    height: 100px;
+    display: grid;
+    place-content: center;
+}
+
+footer p{
+    text-align: center;
+    font-weight: 600;
+    color: white;
+}
