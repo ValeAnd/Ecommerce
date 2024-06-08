@@ -1,0 +1,234 @@
+
+:root{
+    --primary--yellow:#E8D838;
+    --primary--white: #FFFFFF;
+    --primary--black:#262626;
+    --secondary--yellow:#F4DE56;
+    --secondary--light--yellow: #FBF3C2;
+}
+
+.banner{
+    padding-top: 6.25rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.background__image{
+    margin-top: 9.375rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.banner__image{
+    position: absolute;
+}
+
+.movies__title, .minions__title, .collage__title, .trailer__title{
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .115rem;
+}
+
+.movies__container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.375rem;
+    margin-bottom: 3rem;
+}
+
+.movie__container .movie__year{
+    position: relative;
+    width: 11.25rem;
+    height: 11.25rem;
+    border: solid 1.875rem var(--secondary--yellow);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.movie__year .text__year{
+    font-size: 30px;
+}
+
+.text__year .text__year--yellow{
+    color: var(--primary--yellow);
+}
+
+.movie__year--right:nth-child(1){
+    order: 2;
+}
+
+.container__image{
+    text-align: center;
+}
+
+.container__image .text__movie{
+    font-weight: 500;
+    font-size: 20px;
+    margin: .9375rem 0;
+}
+
+.minions__container{
+    margin-bottom: 6rem;
+    width: 100%;
+    background-image: url("../imagenes/rectangle.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.minions__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.minions__container--width {
+    margin: 0 auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 20rem;
+    grid-template-areas: 
+    "first ."
+    ". second"
+    "third . ";
+}
+
+.minion__first{
+    margin-top: 5rem;
+    grid-area: first;
+}
+
+.minion__second{
+    grid-area: second;
+}
+
+.minion__third{
+    margin-bottom: 5rem;
+    grid-area: third;
+}
+
+.minions__container .minion__container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.minion__container .text__paragraph{
+    line-height: 1.875rem;
+}
+
+.minion__text--right:nth-child(1){
+    order: 2;
+}
+
+.minion__container .minion__title{
+    display: flex;
+    align-items: center;
+}
+
+.minion__title .title{
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--secondary--light--yellow);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.minion__title img{
+    height: 3.75rem;
+}
+
+.collage__title--yellow {
+    color: var(--primary--yellow);
+}
+
+.collage__container{
+    margin: 0 auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,200px);
+    grid-gap: 10px;
+}
+
+.collage__container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.collage__img:nth-child(2){
+    grid-column-start: span 2;
+}
+
+.collage__img:nth-child(4){
+    grid-row-start: span 2;
+}
+
+.trailer__title{
+    margin-top: 7rem;
+}
+
+.trailer__title span{
+    display: block;
+}
+
+.trailer__container{
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+
+.trailer__container img{
+    position: absolute;
+    top: 0;
+    left: 15%;
+}
+
+.trailer__container .video__trailer{
+    margin-top: 3.75rem;
+    z-index: 1;
+}
+
+.trailer__information{
+    display: grid;
+    place-content: center;
+}
+
+.trailer__information .information__title{
+    margin-top: 13rem;
+    font-size: 6.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--primary--black);
+    text-align: center;
+}
+
+.trailer__information .information__title--yellow{
+    display: block;
+    color: var(--primary--yellow);
+}
+
+.trailer__information .information__img{
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (width < 1400px){
+    .minions__container--width {
+        grid-template-columns: repeat(2, 400px);
+        grid-template-rows: 26rem;
+    }
+}

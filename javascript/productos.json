@@ -1,0 +1,354 @@
+[
+    {
+        "id": 1,
+        "titulo": "Agnes Coleccionable",
+        "precio": 22.90,
+        "img": "imagenes/coleccionables/coleccionable1.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "coleccionables",
+            "nombre": "Coleccionables"
+        }
+    },
+    {
+        "id": 2,
+        "titulo": "Minions Rummy",
+        "precio": 30.90,
+        "img": "imagenes/coleccionables/coleccionable3.webp",
+        "stock": 10,
+        "categoria": {
+            "id": "coleccionables",
+            "nombre": "Coleccionables"
+        }
+    },
+    {
+        "id": 3,
+        "titulo": "Minions Uno",
+        "precio": 40.90,
+        "img": "imagenes/coleccionables/coleccionable4.webp",
+        "stock": 10,
+        "categoria": {
+            "id": "coleccionables",
+            "nombre": "Coleccionables"
+        }
+    },
+    {
+        "id": 4,
+        "titulo": "Minions Explonding",
+        "precio": 50.90,
+        "img": "imagenes/coleccionables/coleccionable5.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "coleccionables",
+            "nombre": "Coleccionables"
+        }
+    },
+    {
+        "id": 5,
+        "titulo": "Minion reto bananas",
+        "precio": 22.90,
+        "img": "imagenes/coleccionables/coleccionable6.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "coleccionables",
+            "nombre": "Coleccionables"
+        }
+    },
+    {
+        "id": 6,
+        "titulo": "Minions Operation",
+        "precio": 22.90,
+        "img": "imagenes/coleccionables/coleccionable7.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "coleccionables",
+            "nombre": "Coleccionables"
+        }
+    },
+    {
+        "id": 7,
+        "titulo": "Minions Rummy",
+        "precio": 50.90,
+        "img": "imagenes/coleccionables/coleccionable3.webp",
+        "stock": 10,
+        "categoria": {
+            "id": "coleccionables",
+            "nombre": "Coleccionables"
+        }
+    },
+    {
+        "id": 8,
+        "titulo": "Funko Minion Isla",
+        "precio": 50.90,
+        "img": "imagenes/funkos/funko1.webp",
+        "stock": 10,
+        "categoria": {
+            "id": "funkos",
+            "nombre": "Funkos"
+        }
+    },
+    {
+        "id": 9,
+        "titulo": "Funko Minion Rey",
+        "precio": 40.90,
+        "img": "imagenes/funkos/funko3.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "funkos",
+            "nombre": "Funkos"
+        }
+    },
+    {
+        "id": 10,
+        "titulo": "Funko Minion Patito",
+        "precio": 30.90,
+        "img": "imagenes/funkos/funko4.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "funkos",
+            "nombre": "Funkos"
+        }
+    },
+    {
+        "id": 11,
+        "titulo": "Funko Minion Love",
+        "precio": 70.90,
+        "img": "imagenes/funkos/funko5.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "funkos",
+            "nombre": "Funkos"
+        }
+    },
+    {
+        "id": 12,
+        "titulo": "Funko Minion Disfrazado",
+        "precio": 50.90,
+        "img": "imagenes/funkos/funko6.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "funkos",
+            "nombre": "Funkos"
+        }
+    },
+    {
+        "id": 13,
+        "titulo": "Funko Minion Bailarin",
+        "precio": 70.90,
+        "img": "imagenes/funkos/funko7.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "funkos",
+            "nombre": "Funkos"
+        }
+    },
+    {
+        "id": 14,
+        "titulo": "Funko Minion Enmascarado",
+        "precio": 80.90,
+        "img": "imagenes/funkos/funko8.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "funkos",
+            "nombre": "Funkos"
+        }
+    },
+    {
+        "id": 15,
+        "titulo": "Funko Minions Gru",
+        "precio": 50.90,
+        "img": "imagenes/funkos/funko9.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "funkos",
+            "nombre": "Funkos"
+        }
+    },
+    {
+        "id": 16,
+        "titulo": "Funko Minion Malvado",
+        "precio": 50.90,
+        "img": "imagenes/funkos/funko10.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "funkos",
+            "nombre": "Funkos"
+        }
+    },
+    {
+        "id": 17,
+        "titulo": "Platos y taza minions",
+        "precio": 10.90,
+        "img": "imagenes/articulos/articulo1.webp",
+        "stock": 10,
+        "categoria": {
+            "id": "articulos",
+            "nombre": "Articulos"
+        }
+    },
+    {
+        "id": 18,
+        "titulo": "Lampara Minions",
+        "precio": 20.90,
+        "img": "imagenes/articulos/articulo2.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "articulos",
+            "nombre": "Articulos"
+        }
+    },
+    {
+        "id": 19,
+        "titulo": "Mochila Minions",
+        "precio": 100.90,
+        "img": "imagenes/articulos/articulo3.webp",
+        "stock": 10,
+        "categoria": {
+            "id": "articulos",
+            "nombre": "Articulos"
+        }
+    },
+    {
+        "id": 20,
+        "titulo": "Cubiertos minions",
+        "precio": 7.90,
+        "img": "imagenes/articulos/articulo4.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "articulos",
+            "nombre": "Articulos"
+        }
+    },
+    {
+        "id": 21,
+        "titulo": "Platos minions",
+        "precio": 20.90,
+        "img": "imagenes/articulos/articulo6.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "articulos",
+            "nombre": "Articulos"
+        }
+    },
+    {
+        "id": 22,
+        "titulo": "Almohada minions",
+        "precio": 10.90,
+        "img": "imagenes/articulos/articulo7.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "articulos",
+            "nombre": "Articulos"
+        }
+    },
+    {
+        "id": 23,
+        "titulo": "Almohadin minions",
+        "precio": 40.90,
+        "img": "imagenes/articulos/articulo9.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "articulos",
+            "nombre": "Articulos"
+        }
+    },
+    {
+        "id": 24,
+        "titulo": "Almohada 2 minions",
+        "precio": 50.90,
+        "img": "imagenes/articulos/articulo8.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "articulos",
+            "nombre": "Articulos"
+        }
+    },
+    {
+        "id": 25,
+        "titulo": "Envase minions",
+        "precio": 30.90,
+        "img": "imagenes/articulos/articulo10.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "articulos",
+            "nombre": "Articulos"
+        }
+    },
+    {
+        "id": 26,
+        "titulo": "Taza minions",
+        "precio": 25.90,
+        "img": "imagenes/articulos/articulo13.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "articulos",
+            "nombre": "Articulos"
+        }
+    },
+    {
+        "id": 27,
+        "titulo": "Pijama minions",
+        "precio": 55.90,
+        "img": "imagenes/ropa/ropa1.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "ropa",
+            "nombre": "Ropa"
+        }
+    },
+    {
+        "id": 28,
+        "titulo": "Pijama verano minions",
+        "precio": 55.90,
+        "img": "imagenes/ropa/ropa2.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "ropa",
+            "nombre": "Ropa"
+        }
+    },
+    {
+        "id": 29,
+        "titulo": "Polera perro minions",
+        "precio": 45.90,
+        "img": "imagenes/ropa/ropa3.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "ropa",
+            "nombre": "Ropa"
+        }
+    },
+    {
+        "id": 30,
+        "titulo": "Polera perro minions 02",
+        "precio": 45.90,
+        "img": "imagenes/ropa/ropa4.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "ropa",
+            "nombre": "Ropa"
+        }
+    },
+    {
+        "id": 31,
+        "titulo": "Pijama minions 02",
+        "precio": 60.90,
+        "img": "imagenes/ropa/ropa6.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "ropa",
+            "nombre": "Ropa"
+        }
+    },
+    {
+        "id": 32,
+        "titulo": "Polo minions",
+        "precio": 25.90,
+        "img": "imagenes/ropa/ropa5.jpg",
+        "stock": 10,
+        "categoria": {
+            "id": "ropa",
+            "nombre": "Ropa"
+        }
+    }
+]

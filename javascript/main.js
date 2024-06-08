@@ -1,38 +1,122 @@
 
-const container = document.getElementById("container");
+let productos =[];
+fetch("./javascript/productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        cargarProductos(productos);
+        filtrado();
+    })
 
-function mostrarProductos(productos){
-    productos.forEach(el => {
-        const card = document.createElement("div");
-        card.className="card";
+const contenedorProductos = document.querySelector("#products");
+const botonCategorias = document.querySelectorAll(".products__category");
+const tituloPrincipal = document.querySelector("#poster__title");
+let botonAgregar = document.querySelectorAll(".product__button");
+const  activarSubmenu = document.querySelector(".nav__list--products");
+const productosItem= document.querySelector(".nav__products");
+const numerito = document.querySelector("#contador");
 
-        const img = document.createElement("img");
-        img.src= el.img;
-        img.alt = "NOIMG";
-        img.className = "imagen";
+function cargarProductos(productosElegidos){
+    contenedorProductos.innerHTML= " ";
+    productosElegidos.forEach(producto =>{
+        const div = document.createElement("div");
+        div.classList.add("product__container");
+        div.innerHTML =`
+            <img class="product__imagen" src="${producto.img}" alt="${producto.titulo}">
+            <div class="product__texts">
+                <p class="product__title">${producto.titulo}</p>
+                <p class="product__price">S/${producto.precio}</p>
+            </div>
+            <button class="product__button" id="${producto.id}">Agregar</button>
+        `;
+        contenedorProductos.append(div);
+    });
+    actualizarBotonAgregar();
+}
 
-        const title = document.createElement("p");
-        title.className="title";
-        title.innerText= el.nombre;
+cargarProductos(productos);
 
-        const price = document.createElement("p");
-        price.className="price";
-        price.innerText= `S/${el.precio}`;
-
-        const buttonAgregar = document.createElement("button");
-        buttonAgregar.className = "button__agregar";
-        buttonAgregar.innerText = "Agregar Carrito";
+botonCategorias.forEach(boton =>{
+    boton.addEventListener("click",(e) =>{
+        const idBoton = e.currentTarget.id;
+        const productosCategoria = productos.find(producto => producto.categoria.id === idBoton);
+        tituloPrincipal.innerText = productosCategoria.categoria.nombre;
+        const productosBoton = productos.filter(producto => producto.categoria.id === idBoton);
+        cargarProductos(productosBoton);
         
-        card.appendChild(img);
-        card.appendChild(title);
-        card.appendChild(price);
-        card.appendChild(buttonAgregar);
+    });
+});
 
-        container.appendChild(card);
+activarSubmenu.addEventListener("click", () =>{
+    productosItem.classList.toggle("nav__products--active");
+});
 
-        buttonAgregar.addEventListener("click", () => agregarCarrito(el)); 
-
+function actualizarBotonAgregar(){
+    botonAgregar = document.querySelectorAll(".product__button");
+    botonAgregar.forEach(botones => {
+        botones.addEventListener("click", agregarCarrito);
     });
 }
 
-mostrarProductos(productos);
+let productosCarrito=[];
+
+let productosCarritoLS = localStorage.getItem("productos");
+
+if(productosCarritoLS){
+    productosCarrito = JSON.parse(productosCarritoLS);
+    actualizarNumerito();
+}else{
+    productosCarrito= [];
+}
+
+function agregarCarrito(e){
+    const idBoton = e.currentTarget.id;
+    const productoAgregado = productos.find(producto => producto.id === parseInt(idBoton));
+    Toastify({
+        text: `Producto Agregado` ,
+        duration: 500,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", 
+        position: "right", 
+        stopOnFocus: true, 
+        style: {
+          background: "linear-gradient(to right, #F4DE56, #F4DE56)",
+        },
+        offset: {
+            x: '2em', 
+            y: '5em' 
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
+    if(productosCarrito.some(producto => producto.id === parseInt(idBoton))){
+        const index = productosCarrito.findIndex(producto => producto.id === parseInt(idBoton));
+        productosCarrito[index].cantidad ++;
+    }else{
+        productoAgregado.cantidad = 1;
+        productosCarrito.push(productoAgregado);
+    }
+    actualizarNumerito();
+    localStorage.setItem("productos", JSON.stringify(productosCarrito));
+}
+
+function actualizarNumerito(){
+    const nuevoNumerito = productosCarrito.reduce((contador, producto) => contador + producto.cantidad ,0);
+    numerito.innerText = nuevoNumerito;
+}
+
+
+function filtrado(){
+    const categoriaSeleccionada = localStorage.getItem('categoriaSeleccionada');
+    if (categoriaSeleccionada) {
+        const productosFiltrados = productos.filter(producto => producto.categoria.id === categoriaSeleccionada );
+        tituloPrincipal.innerText = categoriaSeleccionada;
+        cargarProductos(productosFiltrados);
+    } else {
+        tituloPrincipal.innerText = "Todos los productos";
+        cargarProductos(productos);
+    }
+
+}

@@ -1,0 +1,141 @@
+:root {
+    --primary--white: #ececec;
+    --secondary--yellow:#F4DE56;
+}
+main{
+    margin: 0 auto;
+    padding-top: 130px;
+    width: 60%;
+}
+
+.titulo__principal{
+    margin-top: 2.5rem;
+    color: #4D68B6;
+}
+
+.cart__container{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.cart__empty, .cart__buy{
+    color: black;
+}
+
+.cart__products{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carrito-producto{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 60px;
+    align-items: center;
+    gap: 60px;
+    background-color: #EBEBEB;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.carrito-producto-imagen{
+    width: 9rem;
+    height: 9rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.carrito-producto small{
+    font-size: .9375rem;
+}
+
+.carrito-producto-eliminar{
+    border: 0;
+    cursor: pointer;
+}
+
+.cart__actions{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.cart__actions--empty, .cart__actions--buy{
+    border: 0;
+    border: solid 2px #F4DE56;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: white;
+    transition: background-color ease 0.5s;
+}
+
+.cart__actions--buy{
+    background-color: var(--secondary--yellow);
+    border: none;
+    font-weight: 600;
+    transition: background-color ease 0.5s;
+}
+
+.cart__actions--empty:hover{
+    background-color: #ebebeb;
+}
+
+.cart__actions--buy:hover{
+    background-color: #E8D838;
+}
+
+.cart__actions--left{
+    border-bottom:solid 2px #9D9D9D;
+    padding: 1.5rem;
+}
+
+.cart__actions--total{
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.cart__actions--total p{
+    margin-bottom: .9375rem;
+}
+
+.cart__actions--total .text{
+    display: flex;
+    justify-content: space-between;
+}
+
+.text .text__subtitle{
+    font-weight: 600;
+}
+
+.buttons{
+    margin-top: 50px;
+}
+
+.buttons button{
+    margin-right: 1.5rem;
+}
+
+.disabled{
+    display: none;
+}
+
+@media (width < 1440px) {
+    main{
+        width: 70%;
+    }
+    .carrito-producto-imagen{
+        width: 8rem;
+        height: 8rem;
+    }
+    .cart__actions--empty, .cart__actions--buy{
+        padding: 1rem 2rem;
+    }
+    .buttons button{
+        margin-right: 1rem;
+    }
+}

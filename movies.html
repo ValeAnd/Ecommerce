@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/movies.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Miniscol | Peliculas</title>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--left"><a href="index.html"><img src="./imagenes/logo.jpg" alt="" width="75px" >Miniscol</a></li>
+                <li class="nav__item"><a href="index.html">Inicio</a></li>
+                <li class="nav__item nav__list--products">Productos
+                    <ul class="nav__products">
+                        <li id="coleccionables" class="item__products products__category"><a href="#" class="nav-link categoria-link">Coleccionables</a></li>
+                        <li id="funkos" class="item__products products__category"><a href="#" class="nav-link categoria-link">Funkos</a></li>
+                        <li id="articulos" class="item__products products__category"><a href="#" class="nav-link categoria-link">Articulos</a></li>
+                        <li id="ropa" class="item__products products__category"><a href="#" class="nav-link categoria-link">Ropa</a></li>
+                    </ul>
+                </li>
+                <li class="nav__item"><a href="movies.html">Peliculas</a></li>
+                <li class="nav__item"><a href="#">Contactanos</a></li>
+                <li class="nav__item nav__item--right"><a href="carrito.html"><img src="./imagenes/icon-cart.svg" alt=""><span id="contador">0</span></a></li>
+                <li class="nav__item"><img class= "nav__item-image" src="./imagenes/image-avatar.png" alt=""></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="banner">
+            <figure class="banner__background">
+                <img src="./imagenes/banner2.png" alt="Banner 2" class="background__image">
+            </figure>
+            <figure class="banner__image">
+                <img src="./imagenes/banner3.png" alt="" class="image__minions">
+            </figure>
+        </section>
+        <section id="movies" >
+            <h1 class="movies__title"><img src="./imagenes/lentes.png" alt="Ojos Minions">Movies: Orden Cronologico</h1>
+            <div class="movies__container">
+                <div class="movie__container" data-aos="fade-right">
+                    <div class="movie__year">
+                        <h2 class="text__year">20<span class="text__year--yellow">15</span></h2>
+                    </div>
+                    <div class="container__image">
+                        <h3 class="text__movie">Los minions</h3>
+                        <img src="./imagenes/movie1.png" alt="Pelicula 1">
+                    </div>
+                </div>
+                <div class="movie__container" data-aos="fade-right">
+                    <div class="movie__year movie__year--right">
+                        <h2 class="text__year">20<span class="text__year--yellow">22</span></h2>
+                    </div>
+                    <div class="container__image">
+                        <h3 class="text__movie">Minions el origen de Gru</h3>
+                        <img src="./imagenes/movie2.png" alt="Pelicula 2">
+                    </div>
+                </div>
+                <div class="movie__container" data-aos="fade-right">
+                    <div class="movie__year">
+                        <h2 class="text__year">20<span class="text__year--yellow">10</span></h2>
+                    </div>
+                    <div class="container__image">
+                        <h3 class="text__movie">Mi villano favorito</h3>
+                        <img src="./imagenes/movie3.png" alt="Pelicula 3">
+                    </div>
+                </div>
+                <div class="movie__container" data-aos="fade-right">
+                    <div class="movie__year movie__year--right">
+                        <h2 class="text__year">20<span class="text__year--yellow">13</span></h2>
+                    </div>
+                    <div class="container__image">
+                        <h3 class="text__movie">Mi Villano Favorito 2</h3>
+                        <img src="./imagenes/movie4.png" alt="Pelicula 4">
+                    </div>
+                </div>
+                <div class="movie__container" data-aos="fade-right">
+                    <div class="movie__year">
+                        <h2 class="text__year">20<span class="text__year--yellow">17</span></h2>
+                    </div>
+                    <div class="container__image">
+                        <h3 class="text__movie">Mi villano favorito 3</h3>
+                        <img src="./imagenes/movie5.png" alt="Pelicula 5">
+                    </div>
+                </div>
+                <div class="movie__container" data-aos="fade-right">
+                    <div class="movie__year movie__year--right">
+                        <h2 class="text__year">20<span class="text__year--yellow">24</span></h2>
+                    </div>
+                    <div class="container__image">
+                        <h3 class="text__movie">Mi villano favorito 4</h3>
+                        <img src="./imagenes/movie6.png" alt="Pelicula 6">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="minions" >
+            <h1 class="minions__title">Los tres inseparables <img src="./imagenes/title2.png" alt="Minions"></h1>
+            <div class="minions__container">
+                <div class="minions__container--width">
+                    <div class="minion__container minion__first">
+                        <div class="minion__text">
+                           <div class="minion__title">
+                                <h2 class="title">Kevin</h2>
+                                <img src="./imagenes/arrow1.png" alt="Arrow">
+                           </div>
+                            <p class="text__paragraph">Es el mayor de los minions, es un minion alto, con dos ojos y con el cabello largo peinado hacia arriba. Es el líder del grupo y busca el bienestar del grupo.</p>
+                        </div>
+                        <div class="minion__image">
+                            <img src="./imagenes/kevin.png" alt="Kevin">
+                        </div>
+                    </div>
+                    <div class="minion__container minion__second" >
+                        <div class="minion__image">
+                            <img src="./imagenes/stuar.png" alt="Stuart">
+                        </div>
+                        <div class="minion__text minion__text--right">
+                            <div  class="minion__title">
+                                <img src="./imagenes/arrow2.png" alt="Arrow">
+                                <h2 class="title">Stuart</h2>
+                            </div>
+                            <p class="text__paragraph">Stuart tiene un solo ojo, con cabello peinado a los lados, es gracioso, juguetón, sincero, e inocente, y prefiere tocar la guitarra y relajarse. Siempre tiene hambre.</p>
+                        </div>
+                    </div>
+                    <div class="minion__container minion__third">
+                        <div class="minion__text">
+                            <div class="minion__title">
+                                <h2 class="title">Bob</h2>
+                                <img src="./imagenes/arrow1.png" alt="Arrow">
+                            </div>
+                            <p class="text__paragraph">Bob es el minion más joven y el más infantil, es bajito y calvo y tiene un ojo de color verde y el otro marrón. Suele jugar con su osito de peluche Tim.</p>
+                        </div>
+                        <div class="minion__image">
+                            <img src="./imagenes/bob.png" alt="Bob">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="collage" data-aos="fade-down">
+            <h1 class="collage__title">Falshbacks <span class="collage__title--yellow">Amarillos</span></h1>
+            <div class="collage__container">
+                <div class="collage__img">
+                    <img src="./imagenes/collage1.jpg" alt="Collage minions">
+                </div>
+                <div class="collage__img">
+                    <img src="./imagenes/collage3.jpg" alt="Collage minions">
+                </div>
+                <div class="collage__img">
+                    <img src="./imagenes/collage2.jpg" alt="Collage minions">
+                </div>
+                <div class="collage__img">
+                    <img src="./imagenes/collage4.jpg" alt="Collage minions">
+                </div>
+                <div class="collage__img">
+                    <img src="./imagenes/collage5.jpg" alt="Collage minions">
+                </div>
+                <div class="collage__img">
+                    <img src="./imagenes/collage6.jpg" alt="Collage minions">
+                </div>
+                <div class="collage__img">
+                    <img src="./imagenes/collage7.jpg" alt="Collage minions">
+                </div>
+                
+                <div class="collage__img">
+                    <img src="./imagenes/collage12.avif" alt="Collage minions">
+                </div>
+                <div class="collage__img">
+                    <img src="./imagenes/collage10.jpeg" alt="Collage minions">
+                </div>
+                <div class="collage__img">
+                    <img src="./imagenes/collage8.jpg" alt="Collage minions">
+                </div>
+            </div>
+        </section>
+        <section id="trailer">
+            <h1 class="trailer__title">Trailer mi villano favorito 4 <span class="collage__title--yellow">2024</span></h1>
+            <div class="trailer__container">
+                <iframe width="845" height="462" class="video__trailer"  src="https://www.youtube.com/embed/I0_qFoptZ4Y?si=ynVN7u57s85NIglc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <img src="./imagenes/circle2.png" alt="">
+            </div>
+            <div class="trailer__information">
+                <p class="information__title">Estreno 3 julio <span class="information__title--yellow">2024</span></p>
+                <img src="./imagenes/minions.jpg" class="information__img" alt="">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Elaborado por Valery Andrea <3 </p>
+    </footer>
+    <script src="./javascript/scripts.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- script para agregar animaciones a la pagina usando la libreria AOS -->
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
